@@ -16,7 +16,7 @@ function remove(array, member) {
 	return newArray;
 }
 
-remove(array, 'Cadence');
+remove([ 'Cadence', 'Ordel', 'Marion' ], 'Cadence');
 
 // 2. Revisit your "remove" function. Make sure that it does not change the original
 // array but instead returns a new array.
@@ -81,8 +81,27 @@ function minimum(array) {
 // https://courses.cs.vt.edu/csonline/Algorithms/Lessons/SelectionSort/index.html
 // to see how. This may make more sense to you.
 
+function selectionSort(array) {
+	let arrayCopy = array.slice(0);
+	let arrayNewAndExciting = [];
+	while (arrayCopy.length > 0) {
+		let little = minimum(arrayCopy);
+		let i = arrayCopy.indexOf(little);
+		arrayNewAndExciting.push(little);
+		console.log(arrayNewAndExciting);
+		console.log(arrayCopy);
+		arrayCopy.splice(i, 1);
+	}
+	console.log(arrayNewAndExciting);
+	return arrayNewAndExciting;
+}
+
 // 7. Create a function called `textList` that takes an array and joins its elements
 // into a string separated by commas.
 //
 // For example, `textList(['Cadence', 'Ordel', 'Marion'])` results in the string
 // `"Cadence,Ordel,Marion"`.
+
+function textList(array) {
+	return array.join(',');
+}
