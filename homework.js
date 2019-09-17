@@ -6,14 +6,47 @@
 // If the potential member is not in the array, return the array unchanged.
 // If the potential member is in the array, remove all instances of it from the array.
 
+function remove(array, member) {
+    let newArray = []
+    for (let name of array) {
+      if (name != member) {
+        newArray.push(name)
+      }
+    }
+    return newArray
+  }
+  
+  remove(array, "Cadence")
+
+
 // 2. Revisit your "remove" function. Make sure that it does not change the original
 // array but instead returns a new array.
+
 
 // 3. Create a function called "sum" that takes an array of numbers and
 // returns the sum of those numbers.
 
+function sum(array) {
+    let yay = 0
+    for (let i = 0; i < array.length; i++) {
+      yay += array[i]
+    }
+    return yay
+    }
+
 // 4. Create a function called "average" that takes an array of numbers
 // and returns the average of those numbers.
+
+function average(array) {
+    let yay = 0
+    if (array.length === 0) {
+        return undefined 
+    }
+    for (let i = 0; i < array.length; i++) {
+      yay += array[i]
+    }
+    return yay / array.length
+}    
 
 // 5. Create a function called "minimum" that takes an array of numbers and
 // returns the smallest number in that array.
