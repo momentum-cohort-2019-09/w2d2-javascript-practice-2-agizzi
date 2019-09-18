@@ -81,20 +81,43 @@ function minimum(array) {
 // https://courses.cs.vt.edu/csonline/Algorithms/Lessons/SelectionSort/index.html
 // to see how. This may make more sense to you.
 
+// Solution # 1 !!
+
+function removeOnce(array, itemToRemove) {
+	let idx = array.indexOf(itemToRemove);
+	if (idx !== -1) {
+		array.splice(idx, 1);
+	}
+	return array;
+}
+
 function selectionSort(array) {
-	let arrayCopy = array.slice(0);
+	let arrayCopy = array.slice();
 	let arrayNewAndExciting = [];
+
 	while (arrayCopy.length > 0) {
 		let little = minimum(arrayCopy);
-		let i = arrayCopy.indexOf(little);
+		arrayCopy = removeOnce(arrayCopy, little);
 		arrayNewAndExciting.push(little);
-		console.log(arrayNewAndExciting);
-		console.log(arrayCopy);
-		arrayCopy.splice(i, 1);
+		arrayCopy.slice(little, 1);
 	}
-	console.log(arrayNewAndExciting);
 	return arrayNewAndExciting;
 }
+
+//  Solution # 2 !!!
+
+// function selectionSort(array) {
+// 	let arrayCopy = array.slice();
+// 	let arrayNewAndExciting = [];
+// 	while (arrayCopy.length > 0) {
+// 		let little = minimum(arrayCopy);
+// 		let i = arrayCopy.indexOf(little);
+// 		arrayNewAndExciting.push(little);
+// 		arrayCopy.splice(i, 1);
+// 	}
+
+// 	return arrayNewAndExciting;
+// }
 
 // 7. Create a function called `textList` that takes an array and joins its elements
 // into a string separated by commas.
