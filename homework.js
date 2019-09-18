@@ -103,5 +103,5 @@ function selectionSort(array) {
 // `"Cadence,Ordel,Marion"`.
 
 function textList(array) {
-	return array.join(',');
+	return array.join();
 }
