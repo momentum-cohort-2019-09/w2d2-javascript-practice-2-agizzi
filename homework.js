@@ -9,7 +9,7 @@
 function remove(array, member) {
 	let newArray = [];
 	for (let name of array) {
-		if (name != member) {
+		if (name !== member) {
 			newArray.push(name);
 		}
 	}
